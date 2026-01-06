@@ -597,13 +597,14 @@ class ChatterboxTTS:
         output_file.close()
         
         try:
-            # Build auto-editor command (adapted for 28.0.0 version)
+            # Build auto-editor command (version 27.0.0)
             cmd = [
                 "auto-editor",
                 audio_path,
                 "--edit", f"audio:threshold={threshold}",
                 "--margin", f"{margin}s",
-                "--output-file", output_file.name
+                "--output-file", output_file.name,
+                "--my-ffmpeg", "-ac 1",  # Force mono output
             ]
             
             print(f"[INFO] Cleaning artifacts: {' '.join(cmd)}")
