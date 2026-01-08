@@ -597,13 +597,14 @@ class ChatterboxTTS:
         output_file.close()
         
         try:
-            # Build auto-editor command (adapted for 28.0.0 version)
+            # Build auto-editor command (version 27.1.0)
             cmd = [
                 "auto-editor",
                 audio_path,
                 "--edit", f"audio:threshold={threshold}",
                 "--margin", f"{margin}s",
-                "--output-file", output_file.name
+                "--output-file", output_file.name,
+                "--audio-layout", "mono",
             ]
             
             print(f"[INFO] Cleaning artifacts: {' '.join(cmd)}")

@@ -22,7 +22,7 @@ dependencies = [
     "safetensors==0.5.3",
     "spacy-pkuseg",
     "pykakasi==2.3.0",
-    "auto-editor==27.0.0"
+    "auto-editor==27.1.0"
 ]
 
 [project.urls]
